@@ -1,0 +1,456 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Playfair+Display:ital,wght@1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Temple Materials Palette */
+  --granite-stone: #1f1b18;
+  --granite-dark: #14110f;
+  --sandstone-bg: #f8f4ec;
+  --sandstone-panel: #f2e9dc;
+  --parchment-card: #fdfbf7;
+  --card-border: #e8ded0;
+  
+  /* Traditional Pigments */
+  --bronze-gold: #c88a36;
+  --brass-accent: #d4af37;
+  --terracotta-red: #8c382a;
+  --terracotta-deep: #6e251a;
+  --patina-green: #374d41;
+  --emerald-jade: #244436;
+  --text-primary: #2d2621;
+  --text-muted: #7d7268;
+
+  /* Elevation & Shadows */
+  --shadow-card: 0 4px 14px rgba(60, 42, 26, 0.08), 0 1px 3px rgba(60, 42, 26, 0.05);
+  --shadow-elevated: 0 8px 24px rgba(60, 42, 26, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text-primary);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  
+  /* High-resolution South Indian Temple Courtyard */
+  background: 
+    /* Ambient warm sunlight & dark vignette for maximum text contrast */
+    linear-gradient(180deg, rgba(25, 20, 15, 0.55) 0%, rgba(35, 28, 20, 0.75) 100%),
+    radial-gradient(ellipse at 80% 15%, rgba(212, 175, 55, 0.35), transparent 60%),
+    url('https://images.unsplash.com/photo-1582510003544-4d00b7f74220?q=80&w=2070&auto=format&fit=crop') center center / cover no-repeat fixed;
+  background-attachment: fixed;
+}
+
+/* =======================================================
+   APP LAYOUT & HEADER (KARYA)
+   ======================================================= */
+.karya-app-container {
+  max-width: 1320px;
+  margin: 24px auto;
+  padding: 0 20px 40px;
+}
+
+.karya-header {
+  /* Semi-transparent ivory parchment with frosted glass */
+  background: linear-gradient(180deg, rgba(250, 246, 238, 0.94), rgba(243, 233, 218, 0.90));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(212, 175, 55, 0.45);
+  border-radius: 20px 20px 0 0;
+  padding: 24px 32px 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  position: relative;
+}
+
+.karya-brand-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.karya-brand-emblem {
+  font-size: 2.2rem;
+  filter: drop-shadow(0 2px 4px rgba(140, 56, 42, 0.3));
+}
+
+.karya-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--granite-stone);
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.karya-tagline {
+  font-size: 0.78rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--bronze-gold);
+  font-weight: 600;
+}
+
+.karya-board-headline {
+  text-align: center;
+  margin: 4px 0 18px;
+}
+
+.karya-board-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--granite-stone);
+  margin: 0;
+}
+
+.karya-quote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: #6a5d52;
+  margin: 4px 0 6px;
+}
+
+.karya-kolam-divider {
+  color: var(--brass-accent);
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+/* =======================================================
+   INPUT BAR (SANDSTONE PILL + TERRACOTTA BUTTON)
+   ======================================================= */
+.karya-input-bar {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+  max-width: 780px;
+  margin: 16px auto 8px;
+}
+
+.karya-input-wrapper {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.karya-search-icon {
+  position: absolute;
+  left: 16px;
+  color: var(--bronze-gold);
+  font-size: 1rem;
+}
+
+.karya-input-field {
+  width: 100%;
+  padding: 12px 18px 12px 42px;
+  background-color: #fffdf9;
+  border: 1.5px solid #d9ccb9;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  outline: none;
+  transition: all 0.25s ease;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.karya-input-field:focus {
+  border-color: var(--bronze-gold);
+  box-shadow: 0 0 0 3px rgba(200, 138, 54, 0.2), inset 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.karya-add-btn {
+  background: linear-gradient(135deg, var(--terracotta-red) 0%, var(--terracotta-deep) 100%);
+  color: #ffffff;
+  border: 1px solid var(--brass-accent);
+  border-radius: 999px;
+  padding: 11px 24px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 12px rgba(110, 37, 26, 0.35);
+  transition: all 0.2s ease;
+}
+
+.karya-add-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(110, 37, 26, 0.45);
+  filter: brightness(1.08);
+}
+
+.karya-plus-sign {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+/* =======================================================
+   KANBAN CANVAS & TABLE
+   ======================================================= */
+.karya-main-canvas {
+  /* Frosted sandstone canvas */
+  background: linear-gradient(180deg, rgba(248, 244, 236, 0.88), rgba(238, 226, 209, 0.84));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(212, 175, 55, 0.45);
+  border-top: none;
+  border-radius: 0 0 20px 20px;
+  padding: 24px 28px 40px;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.5);
+  overflow-x: auto;
+}
+
+.tab {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 20px 0;
+  table-layout: fixed;
+}
+
+/* =======================================================
+   COLUMN HEADERS (CARVED TEMPLE ARCHES)
+   ======================================================= */
+.karya-th {
+  width: 33.33%;
+  padding: 0 0 16px 0;
+  font-weight: normal;
+  text-align: left;
+}
+
+.karya-column-arch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1.5px solid;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Arch Variant 1: Sandstone (New) */
+.arch-sandstone {
+  background: linear-gradient(135deg, #ded0be 0%, #c9b49b 100%);
+  border-color: #a89173;
+  color: #3b2c1d;
+}
+
+/* Arch Variant 2: Patina Bronze (In progress) */
+.arch-patina {
+  background: linear-gradient(135deg, #44594e 0%, #304439 100%);
+  border-color: #27382f;
+  color: #f1ede5;
+}
+
+/* Arch Variant 3: Sacred Emerald (Completed) */
+.arch-emerald {
+  background: linear-gradient(135deg, #2e5544 0%, #1e3c2f 100%);
+  border-color: #173025;
+  color: #f1ede5;
+}
+
+.karya-arch-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  justify-content: center;
+}
+
+.karya-motif-svg {
+  width: 26px;
+  height: 26px;
+}
+
+.karya-column-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.karya-count-badge {
+  background: rgba(0, 0, 0, 0.22);
+  color: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.karya-bell-hanging {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.2));
+}
+
+/* =======================================================
+   COLUMN TD & CARDS CONTAINER
+   ======================================================= */
+.karya-td {
+  vertical-align: top;
+  background: rgba(245, 239, 230, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(200, 138, 54, 0.25);
+  border-radius: 16px;
+  padding: 14px;
+  min-height: 480px;
+}
+
+.karya-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 380px;
+}
+
+/* =======================================================
+   TASK CARDS (PARCHMENT / IVORY)
+   ======================================================= */
+.karya-card {
+  /* Solid warm ivory so tasks remain crisp and readable */
+  background: rgba(255, 253, 249, 0.96);
+  border: 1px solid var(--card-border);
+  border-left: 4.5px solid var(--bronze-gold);
+  border-radius: 12px;
+  padding: 14px 16px;
+  box-shadow: 0 4px 16px rgba(45, 30, 15, 0.12), 0 1px 3px rgba(45, 30, 15, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.karya-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(45, 30, 15, 0.2);
+}
+
+.karya-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.karya-card-bullet {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1.8px solid var(--bronze-gold);
+  margin-top: 2px;
+  flex-shrink: 0;
+  background-color: #fff;
+}
+
+.karya-card-title {
+  margin: 0;
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: var(--granite-stone);
+  line-height: 1.35;
+  word-break: break-word;
+}
+
+.karya-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 6px 0 12px 24px;
+}
+
+.karya-calendar-icon {
+  font-size: 0.85rem;
+}
+
+/* Carved Bronze Movement Tokens */
+.karya-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  border-top: 1px dashed rgba(200, 138, 54, 0.25);
+  padding-top: 10px;
+}
+
+.karya-nav-btn {
+  background: linear-gradient(135deg, #fbf7ef, #ece0cd);
+  border: 1.5px solid var(--bronze-gold);
+  color: var(--terracotta-red);
+  font-size: 0.95rem;
+  font-weight: 800;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.karya-nav-btn:hover {
+  background: var(--bronze-gold);
+  color: #ffffff;
+  transform: scale(1.08);
+  box-shadow: 0 0 10px rgba(200, 138, 54, 0.5);
+}
+
+/* =======================================================
+   FOOTER (COURTYARD & DIYA GLOW)
+   ======================================================= */
+.karya-footer {
+  text-align: center;
+  margin-top: 24px;
+  color: #a49282;
+}
+
+.karya-diya-glow {
+  font-size: 1.6rem;
+  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.7));
+  margin-bottom: 4px;
+}
+
+.karya-footer-quote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+/* =======================================================
+   RESPONSIVE DESIGN
+   ======================================================= */
+@media (max-width: 860px) {
+  .tab {
+    display: block;
+  }
+  .tab thead, .tab tbody, .tab tr, .tab th, .tab td {
+    display: block;
+    width: 100%;
+  }
+  .karya-td {
+    margin-bottom: 20px;
+  }
+  .karya-input-bar {
+    flex-direction: column;
+  }
+  .karya-input-wrapper {
+    width: 100%;
+  }
+  .karya-add-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
